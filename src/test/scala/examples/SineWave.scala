@@ -28,5 +28,5 @@ object SineWave extends App {
   
   val sineWaveData = sineWave(waveFrequency, magnitude, sampleFrequency, samples)
   
-  grapher.drawGraph(sineWaveData, Color.BLACK, waveFrequency/sampleFrequency.toDouble)
+  grapher.setData(sineWaveData, Color.BLACK, waveFrequency/sampleFrequency.toDouble)
 }

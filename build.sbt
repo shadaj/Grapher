@@ -1,3 +1,5 @@
-name := "Grapher"
+organization := "shadajProgramming"
 
-version := "0.1.0"
+name := "grapher"
+
+version := "0.1.1-SNAPSHOT"
