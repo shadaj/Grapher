@@ -86,6 +86,11 @@ class Grapher extends JComponent {
       val stringNum = stringToDraw(graphData.xRate * index)
       g.drawString(stringNum, xLoc + xShift.toInt, graphHeight.toInt + 50)
     }
+    
+    val maxY = graphData.data.maxBy(t => t._2)._2
+    val yLoc = graphHeight - (maxY * yScale)
+    g.drawString(maxY.toString, -20, yLoc.toInt)
+    
   }
 
   def setData(data: GraphData) {
@@ -93,8 +98,8 @@ class Grapher extends JComponent {
     repaint()
   }
 
-  def setData(points: Seq[Double], linecolor: Color, XRate: Double, printMax: Boolean = false) {
-    val data = new GraphData(points.zipWithIndex.map(t => ((t._2).toDouble, t._1)), linecolor, XRate, printMax)
+  def setData(name: String, points: Seq[Double], linecolor: Color, XRate: Double, printMax: Boolean = false) {
+    val data = new GraphData(name, points.zipWithIndex.map(t => ((t._2).toDouble, t._1)), linecolor, XRate, printMax)
     setData(data)
   }
 

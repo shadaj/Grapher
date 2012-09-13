@@ -14,7 +14,7 @@ object SineWave extends App {
   }
   
   val grapher = new Grapher
-  val frame = new JFrame("AudioWave")
+  val frame = new JFrame("SquareWave")
   frame.getContentPane().add(grapher)
   frame.pack
   frame.setVisible(true)
@@ -28,5 +28,5 @@ object SineWave extends App {
   
   val sineWaveData = sineWave(waveFrequency, magnitude, sampleFrequency, samples)
   
-  grapher.setData(sineWaveData, Color.BLACK, waveFrequency/sampleFrequency.toDouble)
+  grapher.setData("Sine Wave", sineWaveData, Color.BLACK, waveFrequency/sampleFrequency.toDouble)
 }
